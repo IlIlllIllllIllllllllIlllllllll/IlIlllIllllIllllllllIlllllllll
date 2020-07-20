@@ -1,12 +1,18 @@
 #include<iostream>
-#include<iomanip>
-#include<cmath>
 using namespace std;
 
 int main(){
-	double a,b,c;
-	while (cin>>a>>b>>c){
-		cout<<setprecision(2)<<fixed<<sqrt(a*a+c*c-b*b)<<endl;
+	long long int a,b;
+	while (cin>>a>>b){
+		if (a>b){
+			cout<<a-b<<endl;
+		}
+		else if (a<b){
+			cout<<b-a<<endl;
+		}
+		else {
+			cout<<0<<endl;
+		}
 	}
 	return 0;
 }

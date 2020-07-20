@@ -4,26 +4,27 @@ using namespace std;
 int main(){
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	int n,x=0,y=1;
+	int n,a,b,c,d;
 	//A="0 1 0 1",B="0 1 1 1",C="0 0 1 0",D="1 1 0 1",E="1 0 0 0",F="1 1 0 0"
 	while (cin>>n){
 		while (n--){
-			if (cin>>x>>y>>x>>y){
+			cin>>a>>b>>c>>d;
+			if (a==0 && b==1 && c==0 && d==1){
 				cout<<'A';
 			}
-			if (cin>>x>>y>>y>>y){
+			if (a==0 && b==1 && c==1 && d==1){
 				cout<<'B';
 			}
-			if (cin>>x>>x>>y>>x){
+			if (a==0 && b==0 && c==1 && d==0){
 				cout<<'C';
 			}
-			if (cin>>y>>y>>x>>y){
+			if (a==1 && b==1 && c==0 && d==1){
 				cout<<'D';
 			}
-			if (cin>>y>>x>>x>>x){
+			if (a==1 && b==0 && c==0 && d==0){
 				cout<<'E';
 			}
-			if (cin>>y>>y>>x>>x){
+			if (a==1 && b==1 && c==0 && d==0){
 				cout<<'F';
 			}
 		}

@@ -4,33 +4,26 @@
 using namespace std;
 
 int main(){
-	char s[1002];
-	int a[91]={0};
+	string s;
 	while (cin>>s){
-		for (int i=0;i<strlen(s);i++){
-			if (s[i]>='a' && s[i]<='z'){
+		int ascii[256]={0},odd_counter=0;
+		for (int i=0;i<s.length();i++){
+			if (isalpha(s[i])){ //if ((s[i]>='A' && s[i]<='Z') || (s[i]>='a' **s[i]<='z'
 				s[i]=toupper(s[i]);
-			}
-			for (char j='A';j<='Z';j++){
-				if (s[i]==j){
-					a[j]++;
-				}
+				ascii[s[i]]++;
 			}
 		}
-		int check=0;
-		for (char i='A';i<='Z';i++){
-			if (a[i]%2!=0){
-				check++;
+		for (int i=0;i<256;i++){
+			if (ascii[i]%2==1){
+				odd_counter++;
 			}
 		}
-		if (check==0 || check==1){
+		if (odd_counter<=1){
 			cout<<"yes !"<<endl;
 		}
 		else {
 			cout<<"no..."<<endl;
 		}
-		s[1002]={0};
-		a[91]={0};
 	}
 	return 0;
 }

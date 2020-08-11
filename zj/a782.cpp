@@ -5,22 +5,16 @@ using namespace std;
 void whole_ans(char s[]){
 	char ans_first=s[0];
 	char ans[81]={0};
+	char *ans2=NULL; //NULL(C)¡Bnullptr(C++ 11) Âk¹sªº·N«ä
 	int x=0;
 	for (int i=0;i<=81;i++){
 		if (s[i]==' '){
 			ans[x]=(char)toupper(s[i+1]);
+			ans2=s+i+1;
 			x++;
 			for (int j=0;j<=i;j++){
 				s[j]=0;
 			}
-		}
-	}
-	char ans2[81]={0};
-	int y=0;
-	for (int i=0;i<=81;i++){
-		if (isalpha(s[i])){
-			ans2[y]=s[i];
-			y++;
 		}
 	}
 	cout<<(char)toupper(ans_first)<<ans<<' '<<ans2<<endl;

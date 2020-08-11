@@ -2,6 +2,20 @@
 #include<cstring>
 using namespace std;
 
+void NEW(char s[]){
+	int sum=0;
+	char alphabat[11]="ABGDE#ZYHI";
+	int a[10]={1,2,3,4,5,6,7,8,9,10};
+	int val[256]; //acsii
+	for (int i=0;i<10;i++){
+		val[alphabat[i]]=a[i];
+	}
+	for (int i=0;i<strlen(s);i++){
+		sum+=val[s[i]];
+	}
+	cout<<sum<<endl;
+}
+
 void Greek_Numerals(char s[]){
 	int sum=0;
 	for (int i=0;i<strlen(s);i++){
@@ -92,8 +106,14 @@ void Greek_Numerals(char s[]){
 
 int main(){
 	char s[1000];
-	while (cin>>s && s[0]!='.'){
-		Greek_Numerals(s);
+	while (cin>>s){
+		if (s[0]=='.'&&s[1]=='\0'){
+			break;
+		}
+		else {
+			Greek_Numerals(s);
+			NEW(s);
+		}
 	}
 	return 0;
 }

@@ -2,14 +2,7 @@
 using namespace std;
 
 unsigned long long int f(int n){
-	while (n>0){
-		if (n==1){
-			return 1;
-		}
-		else {
-			return n+f(n-1);
-		}
-	}
+	return n*(n+1)/2;
 }
 
 unsigned long long int g(int n){

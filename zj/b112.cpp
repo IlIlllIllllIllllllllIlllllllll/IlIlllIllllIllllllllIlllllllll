@@ -2,13 +2,12 @@
 using namespace std;
 
 int gcd(int a,int b){ //輾轉相除法
-	int tmp=1;
-	while (tmp!=0){
-		tmp=a%b;
-		a=b;
-		b=tmp;
+	if (b==0){
+		return a;
 	}
-	return a;
+	else {
+		return gcd(b,a%b);
+	}
 }
 
 int main(){

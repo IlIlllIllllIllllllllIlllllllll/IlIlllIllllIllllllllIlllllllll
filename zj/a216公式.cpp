@@ -6,14 +6,7 @@ long long unsigned int f(int n){
 }
 
 long long unsigned int g(int n){
-	while (n>0){
-		if (n==1){
-			return 1;
-		}
-		else {
-			return f(n)+g(n-1);
-		}
-	}
+	return n*(n+1)/2*(n+2)/3;
 }
 
 int main(){

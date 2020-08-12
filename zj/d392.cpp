@@ -7,11 +7,11 @@ int main(){
 	while (getline(cin,s)){
 		unsigned long int sum=0,x;
 		stringstream ss(s);
-		while (1){
-			ss>>x;
+		while (ss>>x){
+			/*ss>>x;
 			if (ss.fail()){
 				break;
-			}
+			}*/
 			sum+=x;
 		}
 		cout<<sum<<endl;

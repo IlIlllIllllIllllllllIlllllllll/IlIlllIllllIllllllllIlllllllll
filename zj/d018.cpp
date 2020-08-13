@@ -1,16 +1,15 @@
 #include<iostream>
-#include<string>
-#include<cstring>
+#include<string> //stod()
 #include<sstream>
-#include<cstdlib> //atof()
 using namespace std;
 
 int main(){
+	cin.tie(0);
+	cin.sync_with_stdio(0);
 	string input;
 	while (getline(cin,input)){
 		stringstream ss(input);
 		string s;
-		char c_str[100000]={0};
 		double sum=0,x,dif=0,y;
 		while (ss>>s){
 			int check;
@@ -27,8 +26,7 @@ int main(){
 						break;
 					}
 				}
-				strcpy(c_str,s.c_str());
-				x=atof(c_str);
+				x=stod(s);
 				sum+=x;
 			}
 			else {
@@ -38,12 +36,11 @@ int main(){
 						break;
 					}
 				}
-				strcpy(c_str,s.c_str());
-				y=atof(c_str);
+				y=stod(s);
 				dif+=y;
 			}
 		}
-		cout<<sum-dif<<endl;
+		cout<<sum-dif<<'\n';
 	}
 	return 0;
 }

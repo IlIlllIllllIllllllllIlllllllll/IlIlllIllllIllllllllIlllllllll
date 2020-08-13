@@ -1,33 +1,36 @@
 #include<iostream>
-#include<string>
-#include<cstring>
+#include<string> //stoi(),isdigit()
 #include<sstream>
-#include<cstdlib> //atoi()
-#include<cctype> //isdigit()
 using namespace std;
 
+int check(string s){
+	bool check=1;
+	int x;
+	for (int i=0;i<s.length();i++){
+		if (isdigit(s[i])==0){
+			check=0;
+		}
+	}
+	if (check){
+		x=stoi(s);
+		return x;
+	}
+	else {
+		return 0;
+	}
+}
+
 int main(){
-	string input;
-	while (getline(cin,input)){
-		stringstream ss(input);
-		string s;
+	cin.tie(0);
+	cin.sync_with_stdio(0);
+	for (string s;getline(cin,s);){
+		stringstream ss(s);
 		int sum=0;
 		while (ss>>s){
-			bool check=1;
-			int x;
-			char a[10000];
-			strcpy(a, s.c_str());
-			for (int i=0;i<s.length();i++){
-				if (isdigit(a[i])==0){
-					check=0;
-				}
-			}
-			if (check){
-				x=atoi(a);
-				sum+=x;
-			}
+			int x=check(s);
+			sum+=x;
 		}
-		cout<<sum<<endl;
+		cout<<sum<<'\n';
 	}
 	return 0;
 }

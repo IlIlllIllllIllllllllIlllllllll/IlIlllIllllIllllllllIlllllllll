@@ -8,10 +8,6 @@ int main(){
 		unsigned long int sum=0,x;
 		stringstream ss(s);
 		while (ss>>x){
-			/*ss>>x;
-			if (ss.fail()){
-				break;
-			}*/
 			sum+=x;
 		}
 		cout<<sum<<endl;

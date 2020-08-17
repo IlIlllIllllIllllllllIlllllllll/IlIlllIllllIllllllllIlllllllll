@@ -8,19 +8,12 @@ int main (){
 	cin.sync_with_stdio(0);
 	int n;
 	cin>>n;
-	cin.ignore();
 	for (int i=n;i>0;i--){
 		string s;
-		getline(cin,s);
-		long long int cnt=0,length=s.length();
-		for (int j=1;j<length;j++){
-			if (s[j-1]=='.'){
-				s.erase(j-1,1);
-				length--;
-			}
-		}
+		cin>>s;
+		long long int cnt=0;
 		stack<char> stk;
-		for (int j=0;j<length;j++){
+		for (int j=0;j<s.length();j++){
 			if (s[j]=='p'){
 				stk.push('p');
 			}

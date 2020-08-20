@@ -11,14 +11,14 @@ int main (){
 	for (int i=n;i>0;i--){
 		string s;
 		cin>>s;
-		long long int cnt=0;
+		int cnt=0;
 		stack<char> stk;
 		for (int j=0;j<s.length();j++){
 			if (s[j]=='p'){
 				stk.push('p');
 			}
 			else if (s[j]=='q'){
-				if (stk.top()=='p'){
+				if (stk.size()>0 && stk.top()=='p'){ //check stk.size !!!
 					cnt++;
 					stk.pop();
 				}

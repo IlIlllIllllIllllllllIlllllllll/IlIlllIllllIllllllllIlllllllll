@@ -14,8 +14,8 @@ int main(){
 		for (int i=0;i<n;i++){
 			if (a[i]!=-1){
 				for (int x=a[i],tmp;x!=-1;){
-					tmp=x;
-					x=a[x];
+					tmp=x;//tmp記下a[i]是誰
+					x=a[x];//x= x的朋友
 					a[tmp]=-1;
 				}
 				ans++;

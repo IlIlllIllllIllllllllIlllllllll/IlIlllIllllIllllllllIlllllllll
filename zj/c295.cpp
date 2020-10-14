@@ -38,7 +38,7 @@ int main(){
 		else {
 			for (int i=0;i<(int)ans.size();i++){
 				cout<<ans[i];
-				(i==(int)ans.size()-1)?cout<<'\n':cout<<' ';
+				cout<<((i==(int)ans.size()-1)?'\n':' ');
 			}
 		}
 	}
